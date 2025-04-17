@@ -6,4 +6,4 @@
     ansible.builtin.package:
       name: mysql-server
       state: present
-      enabled: yes
+      
