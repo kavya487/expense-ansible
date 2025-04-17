@@ -1,9 +1,10 @@
 - name: install mysql
   hosts: web
   become: yes
+  gather_facts: yes
+
   tasks:
-  - name: cofigure mysql 
-    ansible.builtin.package:
-      name: mysql-server
-      state: present
-      
+    - name: configure mysql 
+      ansible.builtin.package:
+        name: mysql-server
+        state: present
