@@ -1,10 +1,19 @@
 - name: install mysql
   hosts: web
   become: yes
-  gather_facts: yes
+  
 
   tasks:
     - name: configure mysql 
       ansible.builtin.package:
         name: mysql-server
         state: present
+
+    - name: run mysql
+      ansible.builtin.service:
+        name: mysqld
+        state: started
+        enabled: yes
+
+    # - name: mysql root password
+    #   ansible.builtin.community
